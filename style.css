@@ -22,6 +22,18 @@ body {
 }
 
 .list-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: var(--color002);
+    max-width: 500px;
+    height: 600px;
+    border-radius: 15px;
+}
+
+.list-container h1 {
+    font-size: 2rem;
+    font-weight: 500;
 }
 
