@@ -6,7 +6,7 @@
     --color001: #2C3E50;
     --color002: #fff;
     --color003: #1a1a1a;
-    --color004: #b9b9b9;
+    --color004: #8d8d8d;
 
     --font001: "Poppins", sans-serif;
 }
@@ -82,7 +82,7 @@ body {
     flex-direction: column-reverse;
     justify-content: center;
     gap: 1.5rem;
-    width: 60%;
+    width: 50%;
     list-style: none;
     padding: 0;
 }
@@ -115,4 +115,31 @@ hr {
     background-color: var(--color004);
     width: 60%;
     height: 1px;
+}
+
+/*Footer*/
+
+.footer {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    color: var(--color004);
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+.footer button {
+    cursor: pointer;
+    border: none;
+    background-color: var(--color002);
+    color: var(--color004);
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    transition: all .3s ease-in-out;
+}
+
+.footer button:hover {
+    color: var(--color003);
 }
