@@ -37,3 +37,27 @@ body {
     font-weight: 500;
 }
 
+.input-group {
+    border: 1px solid var(--color003);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.input-group input {
+    border: none;
+}
+
+.input-group button {
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: var(--color001);
+    color: var(--color002);
+    width: 70px;
+    transition: all .3s ease-in-out;
+}
+
+.input-group button:hover {
+    transform: scale(1.05);
+}
