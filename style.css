@@ -6,6 +6,7 @@
     --color001: #2C3E50;
     --color002: #fff;
     --color003: #1a1a1a;
+    --color004: #b9b9b9;
 
     --font001: "Poppins", sans-serif;
 }
@@ -19,6 +20,11 @@ body {
     margin: 0;
     background-color: var(--color001);
     color: var(--color003);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .list-container {
@@ -27,18 +33,25 @@ body {
     justify-content: center;
     align-items: center;
     background-color: var(--color002);
-    max-width: 500px;
-    height: 600px;
+    width: 500px;
+    height: 500px;
     border-radius: 15px;
 }
 
 .list-container h1 {
     font-size: 2rem;
     font-weight: 500;
+    margin-top: 0;
 }
 
+/*Input Group*/
+
 .input-group {
-    border: 1px solid var(--color003);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 55%;
+    border: 1px solid var(--color004);
     border-radius: 5px;
     padding: 10px;
 }
@@ -60,4 +73,46 @@ body {
 
 .input-group button:hover {
     transform: scale(1.05);
+}
+
+/*List Group*/
+
+.task-list {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 60%;
+    list-style: none;
+    padding: 0;
+}
+
+.task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-list li input {
+    cursor: pointer;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border: 1px solid var(--color004);
+    border-radius: 50%;
+    outline: none;
+    margin: 0;
+    margin-right: 10px;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+}
+
+hr {
+    border: none;
+    background-color: var(--color004);
+    width: 60%;
+    height: 1px;
 }
