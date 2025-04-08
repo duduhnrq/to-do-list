@@ -35,3 +35,7 @@ function updateTaskCount() {
     document.querySelector('.footer span').textContent = `${totalTasks} tasks`;
 }
 
+document.querySelector('.footer button').addEventListener('click', () => {
+    taskList.innerHTML = '';
+    updateTaskCount();
+})
