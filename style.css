@@ -71,7 +71,9 @@ body {
 }
 
 .input-group button:hover {
-    transform: scale(1.05);
+    background-color: var(--color002);
+    color: var(--color001);
+    box-shadow: inset 0px 0px 0px 1px var(--color001);
 }
 
 /*List Group*/
