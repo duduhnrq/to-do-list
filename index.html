@@ -12,17 +12,10 @@
 
         <div class="input-group">
             <input type="text" id="txttask" placeholder="Add your task">
-            <button>Add</button>
+            <button onclick="addTask()" id="addbtn">Add</button>
         </div>
 
         <ul class="task-list">
-            <li>
-                <div class="task">
-                    <input type="checkbox">
-                    <span>Example Task</span>
-                </div>
-                <span class="delete-task">&#215;</span>
-            </li>
         </ul>
 
         <hr>
@@ -32,5 +25,7 @@
             <button>Delete All</button>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
