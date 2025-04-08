@@ -22,3 +22,10 @@ function addTask() {
     taskInput.value = "";
     updateTaskCount();
 }
+
+taskList.addEventListener('click', (e) => {
+    if (e.target.classList.contains('delete-task')) {
+        e.target.parentElement.remove()
+        updateTaskCount();
+    }
+})
