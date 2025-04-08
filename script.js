@@ -29,3 +29,8 @@ taskList.addEventListener('click', (e) => {
         updateTaskCount();
     }
 })
+
+function updateTaskCount() {
+    const totalTasks = taskList.querySelector('li').length;
+    document.querySelector('.footer span').textContent = `${totalTasks} tasks`;
+}
