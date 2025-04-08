@@ -34,14 +34,13 @@ body {
     align-items: center;
     background-color: var(--color002);
     width: 500px;
-    height: 500px;
+    height: auto;
     border-radius: 15px;
 }
 
 .list-container h1 {
     font-size: 2rem;
     font-weight: 500;
-    margin-top: 0;
 }
 
 /*Input Group*/
@@ -110,11 +109,16 @@ body {
     align-items: center;
 }
 
+.delete-task {
+    cursor: pointer;
+}
+
 hr {
     border: none;
     background-color: var(--color004);
     width: 60%;
     height: 1px;
+    margin-top: 0;
 }
 
 /*Footer*/
@@ -126,6 +130,7 @@ hr {
     color: var(--color004);
     font-weight: 300;
     font-size: 1rem;
+    margin-bottom: 20px;
 }
 
 .footer button {
