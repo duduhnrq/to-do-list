@@ -13,7 +13,7 @@ function addTask() {
     const taskItem = document.createElement('li')
     taskItem.innerHTML = `
         <div class="task">
-            <input type="checkbox">
+            <input type="checkbox" class="task-checkbox">
             <span>${taskText}</span>
         </div>
         <span class="delete-task">&#215;</span>
