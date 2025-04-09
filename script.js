@@ -39,3 +39,16 @@ document.querySelector('.footer button').addEventListener('click', () => {
     taskList.innerHTML = '';
     updateTaskCount();
 })
+
+taskList.addEventListener('change', (e) => {
+    if (e.target.classList.contains('task-checkbox')) {
+        const taskText = e.target.nextElementSibling;
+        if (e.target.checked) {
+            taskText.style.textDecoration = 'line-through'; 
+            taskText.style.color = '#8d8d8d';
+        } else {
+            taskText.style.textDecoration = 'none';
+            taskText.style.color = '';
+        }
+    }
+})
