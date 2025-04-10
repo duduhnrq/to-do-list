@@ -52,3 +52,9 @@ taskList.addEventListener('change', (e) => {
         }
     }
 })
+
+taskInput.addEventListener('keypress', (e) => { //
+    if (e.key === 'Enter') {
+        addTask()
+    }
+})
