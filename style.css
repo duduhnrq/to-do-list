@@ -87,7 +87,7 @@ body {
 
 .task-list {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: center;
     gap: 1.5rem;
     width: 50%;
@@ -112,6 +112,7 @@ body {
     outline: none;
     margin: 0;
     margin-right: 10px;
+    transition: all .3s ease-in-out;
 }
 
 .task-checkbox:checked {
