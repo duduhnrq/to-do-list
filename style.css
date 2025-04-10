@@ -105,7 +105,7 @@ body {
     position: relative;
     cursor: pointer;
     appearance: none;
-    width: 25px;
+    min-width: 25px;
     height: 25px;
     border: 1px solid var(--color004);
     border-radius: 50%;
@@ -179,4 +179,10 @@ hr {
 
 .footer button:hover {
     color: var(--color003);
+}
+
+@media (max-width: 800px) {
+    .list-container {
+        width: 80%;
+    }
 }
