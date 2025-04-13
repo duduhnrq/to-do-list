@@ -85,19 +85,53 @@ body {
 
 /*List Group*/
 
+.filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color004);
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 1rem;
+    width: 60%;
+    gap: 1rem;
+}
+
+.filter-btn {
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.filter-btn.active {
+    color: var(--color001);
+}
+
 .task-list {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 1.5rem;
     width: 50%;
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .task-list li {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.task-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 1rem;
+}
+
+.task {
+    display: flex;
     align-items: center;
 }
 
@@ -134,11 +168,6 @@ body {
 
     filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7456%) hue-rotate(51deg) brightness(107%) contrast(93%);
 
-}
-
-.task {
-    display: flex;
-    align-items: center;
 }
 
 .delete-task {
