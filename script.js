@@ -24,6 +24,7 @@ function addTask() {
     taskList.appendChild(taskItem)
     taskInput.value = "";
     updateTaskCount();
+    saveTasks()
 }
 
 filterButtons.forEach(button => {
@@ -54,19 +55,10 @@ filterButtons.forEach(button => {
 
 taskList.addEventListener('click', (e) => {
     if (e.target.classList.contains('delete-task')) {
-        e.target.parentElement.remove()
+        e.target.closest('li').remove();
         updateTaskCount();
+        saveTasks();
     }
-})
-
-function updateTaskCount() {
-    const totalTasks = taskList.querySelectorAll('li').length;
-    document.querySelector('.footer span').textContent = `${totalTasks} tasks`;
-}
-
-document.querySelector('.footer button').addEventListener('click', () => {
-    taskList.innerHTML = '';
-    updateTaskCount();
 })
 
 taskList.addEventListener('change', (e) => {
@@ -79,7 +71,19 @@ taskList.addEventListener('change', (e) => {
             taskText.style.textDecoration = 'none';
             taskText.style.color = '';
         }
+        saveTasks();
     }
+})
+
+function updateTaskCount() {
+    const totalTasks = taskList.querySelectorAll('li').length;
+    document.querySelector('.footer span').textContent = `${totalTasks} tasks`;
+}
+
+document.querySelector('.footer button').addEventListener('click', () => {
+    taskList.innerHTML = '';
+    updateTaskCount();
+    saveTasks();
 })
 
 taskInput.addEventListener('keypress', (e) => { //
@@ -87,3 +91,40 @@ taskInput.addEventListener('keypress', (e) => { //
         addTask()
     }
 })
+
+function saveTasks() {
+    const tasks = [];
+    document.querySelectorAll('.task-list li').forEach(task => {
+        tasks.push({
+            text: task.querySelector('span').textContent,
+            completed: task.querySelector('.task-checkbox').checked
+        })
+    })
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+}
+
+function loadTasks() {
+    const savedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    savedTasks.forEach(taskData => {
+        const newTask = document.createElement('li');
+        newTask.innerHTML = `
+            <div class="task-container">
+                    <div class="task">
+                        <input type="checkbox" class="task-checkbox" ${taskData.completed ? 'checked' : ''}>
+                        <span>${taskData.text}</span>
+                    </div>
+                <span class="delete-task">&#215;</span>
+            </div>
+        `;
+
+        if (taskData.completed) {
+            newTask.querySelector('span').style.textDecoration = 'line-through';
+            newTask.querySelector('span').style.color = '#8d8d8d';
+        }
+
+        taskList.appendChild(newTask);
+    })
+    updateTaskCount();
+}
+
+document.addEventListener('DOMContentLoaded', loadTasks);
