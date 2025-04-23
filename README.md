@@ -36,8 +36,6 @@ Experience the app: [To-Do List](https://duduhnrq.github.io/to-do-list/)
 
 - **Dark Mode**: Eye-friendly theme option
 
-- **Categories**: Organize tasks by priority or type
-
 ## ☎️ Contact
 
 For any inquiries or collaborations:
