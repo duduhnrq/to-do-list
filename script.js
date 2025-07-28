@@ -1,17 +1,17 @@
-const taskInput = document.querySelector('input#txttask')
-const addButton = document.querySelector('button#addbtn')
-const taskList = document.querySelector('ul.task-list')
-const filterButtons = document.querySelectorAll('.filter-btn')
+const taskInput = document.querySelector('input#txttask');
+const addButton = document.querySelector('button#addbtn');
+const taskList = document.querySelector('ul.task-list');
+const filterButtons = document.querySelectorAll('.filter-btn');
 
 function addTask() {
-    const taskText = taskInput.value.trim()
+    const taskText = taskInput.value.trim();
 
     if (!taskText) {
         alert("Por favor, digite uma tarefa!");
         return;
     }
 
-    const taskItem = document.createElement('li')
+    const taskItem = document.createElement('li');
     taskItem.innerHTML = `
         <div class="task-container">
             <div class="task">
@@ -21,10 +21,10 @@ function addTask() {
             <span class="delete-task">&#215;</span>
         </div>
     `;
-    taskList.appendChild(taskItem)
+    taskList.appendChild(taskItem);
     taskInput.value = "";
     updateTaskCount();
-    saveTasks()
+    saveTasks();
 }
 
 filterButtons.forEach(button => {
@@ -32,8 +32,8 @@ filterButtons.forEach(button => {
         filterButtons.forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
 
-        const allTasks = document.querySelectorAll('.task-container')
-        const deleteTask = document.querySelector('.delete-task')
+        const allTasks = document.querySelectorAll('.task-container');
+        const deleteTask = document.querySelector('.delete-task');
         const filter = button.dataset.filter;
 
         allTasks.forEach(task => {
@@ -86,7 +86,7 @@ document.querySelector('.footer button').addEventListener('click', () => {
     saveTasks();
 })
 
-taskInput.addEventListener('keypress', (e) => { //
+taskInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
         addTask()
     }
